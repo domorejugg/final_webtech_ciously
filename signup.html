@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Ciously</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jaro:wght@400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body class="signup-page">
+  <div class="signup-container">
+    <h1 class="signup-title">CIOUSLY</h1>
+    <p class="signup-subtitle">Aww, i love music tooo</p>
+    
+    <form class="signup-form" action="php/signup.php" method="POST" id="signupForm">
+      <div class="form-group">
+        <label for="username" class="form-label">Create a unique username</label>
+        <input type="text" id="username" name="username" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-input" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password" class="form-label">Create a password</label>
+        <input type="password" id="password" name="password" class="form-input" required>
+        <small class="password-hint">Must contain: 8+ characters, 1 capital letter, 1 symbol, 1 asterisk (*)</small>
+      </div>
+      
+      <div class="form-group">
+        <label for="confirm_password" class="form-label">Confirm password</label>
+        <input type="password" id="confirm_password" name="confirm_password" class="form-input" required>
+      </div>
+      
+      <button type="submit" class="signup-button">Sign Up</button>
+    </form>
+  </div>
+
+  <script src="js/signup.js"></script>
+</body>
+</html>

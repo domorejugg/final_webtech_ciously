@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciously | Music Journals</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components/header.css">
+  <link rel="stylesheet" href="css/components/cards.css">
+  <link rel="stylesheet" href="css/library.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav">
+  <div class="nav__logo">
+    <a href="index.html">Ciously</a>
+  </div>
+
+  <ul class="nav__links">
+    <li><a class="nav__link" href="about.html">About Us</a></li>
+    <li><a class="nav__link" href="signup.html">Sign Up</a></li>
+    <li><a class="nav__link" href="discovery-wall.html">Discover</a></li>
+    <li><a class="nav__link" href="#library">My Library</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main>
+      <section class="hero" id="discover">
+        <div class="search">
+          <span class="search__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" role="presentation">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"></circle>
+              <line x1="16" y1="16" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </span>
+          <input class="search__input" type="search" placeholder="Search a song or album..." aria-label="Search songs or albums">
+        </div>
+      </section>
+
+      <section class="social-proof" aria-labelledby="people-say-heading">
+        <div class="section-heading">
+          <h2 id="people-say-heading">What are people saying?</h2>
+        </div>
+        <div class="testimonials-grid" id="testimonialsGrid">
+          <div class="testimonial-card__media">
+            <img src="assets/images/albums/WallPack1/075679873682.jpg" alt="Bohemian Rhapsody album cover" onerror="this.src='assets/images/albums/placeholder.svg'">
+          </div>
+          <div class="testimonial-card__body">
+            <p class="testimonial-card__quote">“Was empty for the most part. It was overlong and self indulgent, jumping between styles without clear purpose. Its dramatic shifts feel gimmicky rather than meaningful“</p>
+            <div class="testimonial-card__actions">
+              <button class="btn btn--rate" type="button">Rate</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="library" data-view="library" hidden>
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Your Library</p>
+            <h3>Browse your logged experiences</h3>
+          </div>
+          <div class="panel__actions">
+            <label class="field field--inline">
+              <span class="field__label">Filter</span>
+              <select id="filterBy" class="field__input">
+                <option value="all">All</option>
+                <option value="artist">Artist</option>
+                <option value="date">Date</option>
+                <option value="rating">Rating</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="library-grid" id="libraryGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="panel" id="about" data-view="about" hidden>
+        <div class="panel__header">
+          <p class="eyebrow">About</p>
+          <h3>For music lovers, by music lovers</h3>
+        </div>
+        <p class="lead">Ciously is a journal for your music journey. Capture how tracks make you feel, watch your tastes evolve, and share in the collective vibe.</p>
+      </section>
+
+      <section class="panel" id="signup" data-view="signup" hidden>
+        <div class="panel__header">
+          <p class="eyebrow">Sign Up</p>
+          <h3>Save your experiences</h3>
+        </div>
+        <form class="stack" aria-label="Create an account">
+          <label class="field">
+            <span class="field__label">Email</span>
+            <input class="field__input" type="email" placeholder="you@example.com" required>
+          </label>
+          <label class="field">
+            <span class="field__label">Password</span>
+            <input class="field__input" type="password" placeholder="••••••••" required>
+          </label>
+          <button class="btn btn--primary" type="button">Create Account</button>
+        </form>
+      </section>
+
+      <section class="panel" id="create" data-view="create" hidden>
+        <div class="panel__header">
+          <p class="eyebrow">Create</p>
+          <h3>Log a new music experience</h3>
+        </div>
+        <form id="logForm" class="stack" autocomplete="off">
+          <div class="grid grid--2">
+            <label class="field">
+              <span class="field__label">Song / Album</span>
+              <input class="field__input" name="title" placeholder="Bohemian Rhapsody" required>
+            </label>
+            <label class="field">
+              <span class="field__label">Artist</span>
+              <input class="field__input" name="artist" placeholder="Queen" required>
+            </label>
+          </div>
+          <div class="grid grid--2">
+            <label class="field">
+              <span class="field__label">Date of experience</span>
+              <input class="field__input" type="date" name="date" required>
+            </label>
+            <label class="field">
+              <span class="field__label">Rating (1-5)</span>
+              <input class="field__input" type="number" name="rating" min="1" max="5" step="1" value="4" required>
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">Mood / emotion tags</span>
+            <input class="field__input" name="moods" placeholder="energetic, nostalgic">
+          </label>
+          <label class="field">
+            <span class="field__label">Reflection</span>
+            <textarea class="field__input" name="reflection" rows="3" placeholder="How did it make you feel?"></textarea>
+          </label>
+          <label class="field">
+            <span class="field__label">Image URL (album art)</span>
+            <input class="field__input" name="image" placeholder="assets/images/albums/bohemian-rhapsody.png">
+          </label>
+          <div class="form-actions">
+            <button class="btn btn--primary" type="submit" id="submitLog">Save Log</button>
+            <button class="btn btn--ghost" type="reset" id="resetLog">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/utils/helpers.js"></script>
+  <script src="js/main.js" type="module"></script>
+  <script src="js/testimonials.js"></script>
+</body>
+</html>
+
